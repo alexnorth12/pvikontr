@@ -1,0 +1,76 @@
+<style>
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr.style-seven:before { 
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+  </style>
+
+<body class="backgr">
+<div class="row">
+
+    <%= search_form_for @q do |f| %>
+        <div class="col-md-4 src">
+            <div class="card my-4">
+                <h5 class="card-header">Search content</h5>
+                <div class="card-body">
+                    <div class="input-group">
+
+                        <%= f.search_field :body_cont, placeholder: "Search to...", :class => 'form-control' %>
+        
+                        <span class="input-group-append"><%= f.submit ({:class => 'btn btn-secondary'}) %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+
+    <%= search_form_for @q do |f| %>
+        <div class="col-md-4 src search_tag">
+            <div class="card my-4">
+                <h5 class="card-header">Search tags</h5>
+                <div class="card-body">
+                    <div class="input-group">
+
+                        <%= f.search_field :tags_cont, placeholder: "Search to...", :class => 'form-control' %>
+        
+                        <span class="input-group-append"><%= f.submit ({:class => 'btn btn-secondary'}) %></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+
+
+
+
+    <div class="card mb-4 post">
+        <div class="card-body ">
+            <% @posts.each do |post| %>
+                <div class = "alert allert-light">   
+                    <h2 class="card-title"><%= post.title %></h2>
+                    |<time><i><%= post.created_at.to_date.strftime("%d %B, %Y") %></i></time>|
+                    <p class="card-text"><%= post.body.truncate(15, separator: "...") %></p>
+                    <%= link_to "Read more", post_path(post), :class => 'btn btn-outline-primary' %>
+                </div>
+                <br>
+                <hr class = "style-seven">
+            <% end %>  
+        </div>     
+    </div>
+</div>
+</body>
+<%= will_paginate @posts, :class => 'pagin' %>

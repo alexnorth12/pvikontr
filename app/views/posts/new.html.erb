@@ -1,0 +1,33 @@
+<div style="background-color: lightskyblue;">
+<div class="form-horizontal">
+
+<h3 class="card-title">New post</h3>
+<%= form_for :post, url: posts_path, :html => { multipart: true } do |f| %>
+    <% if @post.errors.any? %>
+        <% @post.errors.full_messages.each do |msg| %>
+            <div class = "alert alert-danger"><%= msg %></div>
+        <% end %>
+    <% end %>
+
+<p>
+<%= f.text_field :title, placeholder: "Name of post", :class => 'form-control title' %>
+</p>
+<p>
+<%= f.text_area :body, placeholder: "Text of post", :class => 'txt' %>
+</p>
+<p>
+<%= f.text_field :tags, :pattern => '(?:\s|^)(?:#(?!(?:\d+|\w+?_|_\w+?)(?:\s|$)))(\w+)(?=\s|$)+', placeholder: "tags: #tag", :class => 'form-control title' %>
+</p>
+<p>
+    <%= f.file_field :image %>     
+</p>
+
+<p>
+<%= f.submit ({:class =>'btn btn-success'})%>
+</p>
+
+
+<% end %>
+</div>
+</div>
+

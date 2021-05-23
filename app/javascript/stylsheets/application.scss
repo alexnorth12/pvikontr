@@ -1,0 +1,99 @@
+@import "~bootstrap/scss/bootstrap";
+$yellow:#f5ba1a;
+
+.pagin{
+    padding-left: 20%;
+    color: cornsilk;
+    :hover{
+        color:rgb(115,83,132);
+    }
+}
+a{
+    color: rgb(207,232,210);
+}
+
+.image{
+    width: 400px;
+    height: 200px;
+}
+
+.form-horizontal{
+    background: rgba(241,246,252,0.9);
+    padding: 114px 104px;
+    border-radius: 5px;
+    margin-left: 12%;
+    margin-right: 32%;
+}
+
+
+
+.txt{
+    resize: none;
+    width: 90%;
+    height: 300px;
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.title{
+    width: 400px;
+}
+
+.post{
+    top:10px;
+    padding-left: 3%;
+    padding-top: 1%;
+    margin-left: 10%;
+    border-color: aqua;
+    border-width: 3px;
+}
+
+.src{
+    z-index: 2;
+    margin-left: 74%;
+    width: auto;
+    position: fixed;
+}
+
+.backgr{
+    background: url(https://i2.wp.com/ese224.seas.upenn.edu/wp-content/uploads/2018/11/background-website-light-blue-wallpapers-background-2.jpg?fit=1200%2C675&ssl=1&w=640);
+    -moz-background-size:100%;
+    -webkit-background-size:100%;
+    -o-background-size:80%;
+    background-size:100%;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    
+}
+
+.signup{
+    padding-left: 15%;
+}
+.mybd{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 14px;
+    background: #f2f2f2;
+}
+.link{
+    color: $yellow;
+    &:hover, &:focus{
+        color: darken($yellow,7%);
+    }
+}
+.input{
+    width: 20%;
+}
+.search_tag{
+    z-index: 1;
+    padding-top: 10%;
+    position: fixed;
+}
+    
